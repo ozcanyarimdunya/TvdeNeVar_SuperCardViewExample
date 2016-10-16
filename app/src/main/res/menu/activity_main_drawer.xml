@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_now_in_tv"
+            android:title="Tv'de Şimdi" />
+        <item
+            android:id="@+id/nav_all_channels"
+            android:title="Tüm Kanallar" />
+        <item
+            android:id="@+id/nav_films"
+            android:title="Filmler" />
+        <item
+            android:id="@+id/nav_series"
+            android:title="Diziler" />
+        <item
+            android:id="@+id/nav_haber"
+            android:title="Haber Programları" />
+        <item
+            android:id="@+id/nav_sports"
+            android:title="Spor Programları" />
+        <item
+            android:id="@+id/nav_fun"
+            android:title="Eğlence Programları" />
+    </group>
+
+</menu>

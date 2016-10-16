@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="semiworld.org.televizyondanevar.Activity.DetailFullActivity"
+    tools:showIn="@layout/activity_detail_full">
+
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView_detail_full_photo"
+        android:background="#d3d3d3"
+        android:layout_marginEnd="5dp"
+        android:layout_width="200dp"
+        android:layout_height="140dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:background="#d3d3d3"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView_detail_full_photo"
+        android:id="@+id/imageView_detail_full_channel_logo" />
+
+    <TextView
+        android:text="Saat :  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_detail_full_channel_logo"
+        android:layout_toEndOf="@+id/imageView_detail_full_photo"
+        android:id="@+id/textView6"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
+        android:id="@+id/textView_detail_full_long_time"
+        android:maxLines="1" />
+
+    <TextView
+        android:text="Tür   :  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_toEndOf="@+id/imageView_detail_full_photo"
+        android:id="@+id/textView10"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_detail_full_long_time"
+        android:layout_toEndOf="@+id/textView6"
+        android:id="@+id/textView_detail_full_category"
+        android:maxLines="1" />
+
+    <TextView
+        android:text="Oyuncular :  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_toEndOf="@+id/imageView_detail_full_photo"
+        android:id="@+id/textView14"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_detail_full_category"
+        android:layout_toEndOf="@+id/textView14"
+        android:id="@+id/textView_detail_full_artists"
+        android:maxLines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView_detail_full_channel_logo"
+        android:id="@+id/textView_detail_full_time"
+        android:maxLines="1"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_detail_full_time"
+        android:layout_toEndOf="@+id/imageView_detail_full_channel_logo"
+        android:id="@+id/textView_detail_full_name"
+        android:maxLines="1"
+        android:textColor="#393939"
+        android:textStyle="normal|bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView_detail_full_photo"
+        android:layout_alignParentStart="true"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_detail_full_description" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

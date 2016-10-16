@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Televizyonda Ne Var?</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_detay_nitv">Televizyonda Ne Var?</string>
+    <string name="title_activity_detail_ac">Televizyonda Ne Var?</string>
+    <string name="title_activity_detail_full">Televizyonda Ne Var?</string>
+</resources>

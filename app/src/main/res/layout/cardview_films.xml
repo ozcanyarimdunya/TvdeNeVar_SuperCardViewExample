@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_film"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_film_photo"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/textView_film_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView_film_photo"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:background="#e8e8e8"
+                android:textColor="#282600"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView_film_logo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="#d3d3d3"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true" />
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView_film_logo"
+                android:layout_alignParentEnd="true"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:textColor="#fff600"
+                android:background="#848484"
+                android:id="@+id/textView_film_time" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
