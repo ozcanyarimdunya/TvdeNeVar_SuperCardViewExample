@@ -49,7 +49,7 @@ public class FullFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_films, container, false);
 
-        GridLayoutManager glm = new GridLayoutManager(getContext(), 3);
+        GridLayoutManager glm = new GridLayoutManager(getContext(), 2);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycleView_films);
         recyclerView.setLayoutManager(glm);
 
@@ -92,6 +92,7 @@ public class FullFragment extends Fragment {
 
                 } catch (IOException e) {
                     e.printStackTrace();
+                    dialog.dismiss();
                 }
 
                 return null;

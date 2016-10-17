@@ -4,24 +4,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_now_in_tv"
+            android:icon="@drawable/ic_now_in_tv"
             android:title="Tv'de Şimdi" />
         <item
             android:id="@+id/nav_all_channels"
+            android:icon="@drawable/ic_all_channels"
             android:title="Tüm Kanallar" />
         <item
             android:id="@+id/nav_films"
+            android:icon="@drawable/ic_film"
             android:title="Filmler" />
         <item
             android:id="@+id/nav_series"
+            android:icon="@drawable/ic_series"
             android:title="Diziler" />
         <item
             android:id="@+id/nav_haber"
+            android:icon="@drawable/ic_haber"
             android:title="Haber Programları" />
         <item
             android:id="@+id/nav_sports"
+            android:icon="@drawable/ic_sport"
             android:title="Spor Programları" />
         <item
             android:id="@+id/nav_fun"
+            android:icon="@drawable/ic_fun"
             android:title="Eğlence Programları" />
     </group>
 

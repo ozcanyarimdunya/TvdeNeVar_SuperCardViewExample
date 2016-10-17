@@ -42,7 +42,7 @@ public class DetailAcActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_ac);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         imageView = (ImageView) findViewById(R.id.imageView_detail_ac_logo);
         textView = (TextView) findViewById(R.id.textView_detail_ac_description);
@@ -106,6 +106,7 @@ public class DetailAcActivity extends AppCompatActivity {
 
                 } catch (IOException e) {
                     e.printStackTrace();
+                    dialog.dismiss();
                 }
                 return null;
             }

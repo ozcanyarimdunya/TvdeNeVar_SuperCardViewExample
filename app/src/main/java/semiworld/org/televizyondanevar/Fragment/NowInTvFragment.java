@@ -90,6 +90,7 @@ public class NowInTvFragment extends Fragment {
 
                 } catch (IOException e) {
                     e.printStackTrace();
+                    dialog.dismiss();
                 }
                 return null;
             }

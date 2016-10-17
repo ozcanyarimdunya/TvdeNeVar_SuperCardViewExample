@@ -35,8 +35,6 @@ public class DetailNitvActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         name = (TextView) findViewById(R.id.textView_nitvd_program_name);
         channel = (TextView) findViewById(R.id.textView_nitvd_channel_name);
         day = (TextView) findViewById(R.id.textView_nitvd_day);
@@ -88,6 +86,7 @@ public class DetailNitvActivity extends AppCompatActivity {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    dialog.dismiss();
                 }
                 return null;
             }

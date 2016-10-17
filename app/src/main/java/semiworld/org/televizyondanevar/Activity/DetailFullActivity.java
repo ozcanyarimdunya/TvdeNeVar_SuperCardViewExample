@@ -28,7 +28,6 @@ public class DetailFullActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_full);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         time = (TextView) findViewById(R.id.textView_detail_full_time);
         long_time = (TextView) findViewById(R.id.textView_detail_full_long_time);
@@ -78,6 +77,7 @@ public class DetailFullActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                     e.printStackTrace();
+                    dialog.dismiss();
                 }
 
                 return null;
