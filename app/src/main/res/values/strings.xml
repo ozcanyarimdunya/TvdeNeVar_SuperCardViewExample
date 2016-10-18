@@ -9,4 +9,5 @@
     <string name="title_activity_detay_nitv">Televizyonda Ne Var?</string>
     <string name="title_activity_detail_ac">Televizyonda Ne Var?</string>
     <string name="title_activity_detail_full">Televizyonda Ne Var?</string>
+    <string name="title_activity_detail_all_channel">DetailAllChannelActivity</string>
 </resources>

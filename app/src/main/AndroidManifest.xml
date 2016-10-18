@@ -21,24 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.DetailNitvActivity"
-            android:label="@string/title_activity_detay_nitv"
-            android:parentActivityName=".Activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="semiworld.org.televizyondanevar.Activity.MainActivity" />
-        </activity>
-        <activity
-            android:name=".Activity.DetailAcActivity"
-            android:label="@string/title_activity_detail_ac"
-            android:parentActivityName=".Activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="semiworld.org.televizyondanevar.Activity.MainActivity" />
-        </activity>
-        <activity
             android:name=".Activity.DetailFullActivity"
             android:label="@string/title_activity_detail_full"
             android:parentActivityName=".Activity.MainActivity"
@@ -47,6 +29,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="semiworld.org.televizyondanevar.Activity.MainActivity" />
         </activity>
+        <activity
+            android:name=".Activity.DetailAllChannelActivity"
+            android:label="@string/title_activity_detail_all_channel"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+
+import java.io.IOException;
 
 import semiworld.org.televizyondanevar.R;
 
@@ -21,6 +24,7 @@ public class DetailFullActivity extends AppCompatActivity {
     private ImageView photo, logo;
     private String url, t, lt, n, c, a, d, lu, pu;
     private ProgressDialog dialog;
+    private String error="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +79,12 @@ public class DetailFullActivity extends AppCompatActivity {
                     a = document.select("div.TVDetail div.FL div[class=title-2 clear] div.genre ").first().text();
                     d = document.select("div.TVDetail div[class=content clear]").text();
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    dialog.dismiss();
+                } catch (IOException e) {
+                    error = "İnternet bağlantınızı kontrol edin!";
+                    return null;
+                }catch (Exception e){
+                    error = "Hata oluştu!";
+                    return null;
                 }
 
                 return null;
@@ -97,6 +104,9 @@ public class DetailFullActivity extends AppCompatActivity {
                 description.setText(d);
 
                 dialog.dismiss();
+
+                if (!String.valueOf(error).equals(String.valueOf("")))
+                    Toast.makeText(DetailFullActivity.this, error, Toast.LENGTH_SHORT).show();
             }
         };
         task.execute();

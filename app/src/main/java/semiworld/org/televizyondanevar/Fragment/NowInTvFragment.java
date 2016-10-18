@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -32,6 +33,7 @@ public class NowInTvFragment extends Fragment {
     private ArrayList<Program> programArrayList;
     private ProgressDialog dialog;
     private final String URL = "http://www.tivigi.com/";
+    private String error="";
 
     public NowInTvFragment() {
         // Required empty public constructor
@@ -49,7 +51,7 @@ public class NowInTvFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(llm);
 
-        load_data();
+        //load_data();
 
         return view;
     }
@@ -84,13 +86,16 @@ public class NowInTvFragment extends Fragment {
                         String channel_name = e.select("div.col-md-2 div.cell div.channel a").attr("title");
                         String link = URL + e.select("div.col-md-4 div.cell div.programname a").attr("href");
 
-                        Program program = new Program(logo_url, name, category, time, channel_name, link);
-                        programArrayList.add(program);
+                        //Program program = new Program(logo_url, name, category, time, channel_name, link);
+                        //programArrayList.add(program);
                     }
 
                 } catch (IOException e) {
-                    e.printStackTrace();
-                    dialog.dismiss();
+                    error = "İnternet bağlantınızı kontrol edin!";
+                    return null;
+                }catch (Exception e){
+                    error = "Hata oluştu!";
+                    return null;
                 }
                 return null;
             }
@@ -102,6 +107,9 @@ public class NowInTvFragment extends Fragment {
                 adapter = new NowInTvAdapter(getContext(), programArrayList);
                 recyclerView.setAdapter(adapter);
                 dialog.dismiss();
+
+                if (!String.valueOf(error).equals(String.valueOf("")))
+                    Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
             }
         };
         task.execute();

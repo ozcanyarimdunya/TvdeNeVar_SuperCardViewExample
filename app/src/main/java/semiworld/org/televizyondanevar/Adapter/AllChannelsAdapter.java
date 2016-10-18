@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import semiworld.org.televizyondanevar.Activity.DetailAcActivity;
+import semiworld.org.televizyondanevar.Activity.DetailAllChannelActivity;
 import semiworld.org.televizyondanevar.Class.Channel;
 import semiworld.org.televizyondanevar.R;
 
@@ -50,8 +50,7 @@ public class AllChannelsAdapter extends RecyclerView.Adapter<AllChannelsAdapter.
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(view.getContext(), DetailAcActivity.class);
-                intent.putExtra("logo_url", channel.getLogo_url());
+                Intent intent = new Intent(view.getContext(), DetailAllChannelActivity.class);
                 intent.putExtra("link", channel.getLink());
                 view.getContext().startActivity(intent);
 

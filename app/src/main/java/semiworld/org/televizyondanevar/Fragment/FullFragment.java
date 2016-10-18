@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -34,6 +35,7 @@ public class FullFragment extends Fragment {
     private ProgressDialog dialog;
     private String URL = "http://www.hurriyet.com.tr/tv-rehberi/program-akisi/4/film";
     private final String BASE_URL = "http://www.hurriyet.com.tr";
+    private String error ="";
 
     public FullFragment() {
         // Required empty public constructor
@@ -91,8 +93,11 @@ public class FullFragment extends Fragment {
                     }
 
                 } catch (IOException e) {
-                    e.printStackTrace();
-                    dialog.dismiss();
+                    error = "İnternet bağlantınızı kontrol edin!";
+                    return null;
+                }catch (Exception e){
+                    error = "Hata oluştu!";
+                    return null;
                 }
 
                 return null;
@@ -104,6 +109,9 @@ public class FullFragment extends Fragment {
                 adapter = new FullAdapter(getContext(), fullArrayList);
                 recyclerView.setAdapter(adapter);
                 dialog.dismiss();
+
+                if (!String.valueOf(error).equals(String.valueOf("")))
+                    Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
             }
         };
         task.execute();

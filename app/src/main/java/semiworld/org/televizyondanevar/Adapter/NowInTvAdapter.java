@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import semiworld.org.televizyondanevar.Activity.DetailNitvActivity;
 import semiworld.org.televizyondanevar.Class.Program;
 import semiworld.org.televizyondanevar.R;
 
@@ -46,17 +45,8 @@ public class NowInTvAdapter extends RecyclerView.Adapter<NowInTvAdapter.NowInTvV
             holder.name.setText(String.valueOf(program.getProgram_name()));
             holder.time.setText(String.valueOf(program.getProgram_start_time()));
             holder.category.setText(String.valueOf(program.getProgram_category()));
-            holder.channel_name.setText(String.valueOf(program.getChannel_name()));
-            Glide.with(context).load(String.valueOf(program.getLogo_url())).into(holder.imageView);
-
-            holder.view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), DetailNitvActivity.class);
-                    intent.putExtra("link", program.getLink());
-                    view.getContext().startActivity(intent);
-                }
-            });
+            //holder.channel_name.setText(String.valueOf(program.getChannel_name()));
+            Glide.with(context).load(String.valueOf(program.getPhoto())).into(holder.imageView);
 
         } catch (Exception e) {
             e.printStackTrace();

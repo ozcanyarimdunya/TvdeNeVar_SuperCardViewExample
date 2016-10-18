@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="semiworld.org.televizyondanevar.Activity.DetailAcActivity">
+    tools:context="semiworld.org.televizyondanevar.Activity.DetailAllChannelActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_detail_ac" />
+    <include layout="@layout/content_detail_all_channel" />
 
 </android.support.design.widget.CoordinatorLayout>

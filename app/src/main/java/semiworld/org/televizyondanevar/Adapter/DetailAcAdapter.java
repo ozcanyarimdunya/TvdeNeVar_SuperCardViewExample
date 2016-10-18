@@ -1,7 +1,6 @@
 package semiworld.org.televizyondanevar.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import semiworld.org.televizyondanevar.Activity.DetailNitvActivity;
 import semiworld.org.televizyondanevar.Class.Program;
 import semiworld.org.televizyondanevar.R;
 
@@ -34,7 +32,7 @@ public class DetailAcAdapter extends RecyclerView.Adapter<DetailAcAdapter.Detail
 
     @Override
     public DetailAcViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.cardview_detail_ac_br, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cardview_detail_all_channel_broadcast, parent, false);
         return new DetailAcViewHolder(view);
     }
 
@@ -44,25 +42,11 @@ public class DetailAcAdapter extends RecyclerView.Adapter<DetailAcAdapter.Detail
 
         try {
             holder.name.setText(String.valueOf(program.getProgram_name()));
-            holder.time.setText(String.valueOf(program.getProgram_start_time()));
+            holder.time.setText(String.valueOf(program.getProgram_time()));
+            holder.long_time.setText(String.valueOf(program.getProgram_start_time()));
             holder.category.setText(String.valueOf(program.getProgram_category()));
-            Glide.with(context).load(String.valueOf(program.getLogo_url())).into(holder.imageView);
-
-            holder.view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-
-                        Intent intent = new Intent(view.getContext(), DetailNitvActivity.class);
-                        intent.putExtra("link", program.getLink());
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        view.getContext().startActivity(intent);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            Glide.with(context).load(String.valueOf(program.getPhoto())).into(holder.imageView);
+            holder.summary.setText(program.getProgram_summary());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,16 +62,18 @@ public class DetailAcAdapter extends RecyclerView.Adapter<DetailAcAdapter.Detail
         final ImageView imageView;
         final TextView name;
         final TextView time;
+        final TextView long_time;
         final TextView category;
-        final View view;
+        final TextView summary;
 
         DetailAcViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.textView_program_name_nitv);
-            time = (TextView) itemView.findViewById(R.id.textView_time_nitv);
-            category = (TextView) itemView.findViewById(R.id.textView_category_nitv);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView_logo_nitv);
-            view = itemView.findViewById(R.id.cv_detail_ac_br);
+            name = (TextView) itemView.findViewById(R.id.textView_dac_name);
+            time = (TextView) itemView.findViewById(R.id.textView_dac_time);
+            long_time = (TextView) itemView.findViewById(R.id.textView_dac_long_time);
+            category = (TextView) itemView.findViewById(R.id.textView_dac_category);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView_dac_photo);
+            summary = (TextView) itemView.findViewById(R.id.textView_dac_summary);
         }
     }
 }

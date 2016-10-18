@@ -6,31 +6,33 @@ package semiworld.org.televizyondanevar.Class;
  */
 
 public class Program {
-    private String logo_url;
+    private String photo;
     private String program_name;
     private String program_category;
     private String program_start_time;
-    private String channel_name;
     private String link;
+    private String program_time;
+    private String program_summary;
 
     public Program() {
     }
 
-    public Program(String logo_url, String program_name, String program_category, String program_start_time, String channel_name, String link) {
-        this.logo_url = logo_url;
+    public Program(String photo, String program_name, String program_category, String program_start_time, String link, String program_time, String program_summary) {
+        this.photo = photo;
         this.program_name = program_name;
         this.program_category = program_category;
         this.program_start_time = program_start_time;
-        this.channel_name = channel_name;
         this.link = link;
+        this.program_time = program_time;
+        this.program_summary = program_summary;
     }
 
-    public String getLogo_url() {
-        return logo_url;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setLogo_url(String logo_url) {
-        this.logo_url = logo_url;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getProgram_name() {
@@ -57,19 +59,27 @@ public class Program {
         this.program_start_time = program_start_time;
     }
 
-    public String getChannel_name() {
-        return channel_name;
-    }
-
-    public void setChannel_name(String channel_name) {
-        this.channel_name = channel_name;
-    }
-
     public String getLink() {
         return link;
     }
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getProgram_time() {
+        return program_time;
+    }
+
+    public void setProgram_time(String program_time) {
+        this.program_time = program_time;
+    }
+
+    public String getProgram_summary() {
+        return program_summary;
+    }
+
+    public void setProgram_summary(String program_summary) {
+        this.program_summary = program_summary;
     }
 }

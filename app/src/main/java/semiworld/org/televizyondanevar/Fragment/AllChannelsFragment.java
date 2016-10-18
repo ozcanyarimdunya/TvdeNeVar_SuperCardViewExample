@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -33,7 +34,10 @@ public class AllChannelsFragment extends Fragment {
     private AllChannelsAdapter adapter;
     private ArrayList<Channel> channelArrayList;
     private ProgressDialog dialog;
-    private final String URL = "http://www.tivigi.com/";
+    private final String URL = "http://www.hurriyet.com.tr/tv-rehberi/tum-programlar";
+    private final String BASE_URL = "http://www.hurriyet.com.tr";
+    private String error="";
+
     public AllChannelsFragment() {
         // Required empty public constructor
     }
@@ -71,14 +75,14 @@ public class AllChannelsFragment extends Fragment {
             protected Void doInBackground(Void... voids) {
 
                 try {
-                    Document document = Jsoup.connect(URL + "kanallar").get();
+                    Document document = Jsoup.connect(URL).get();
 
-                    Elements elements = document.select("div.kanallar");
+                    Elements elements = document.select("div[class=ChannelList FL]");
 
                     for (Element e : elements) {
-                        String logo_url = URL + e.select("div.thumbnail a img").attr("src");
-                        String name = e.select("div.thumbnail a").attr("title");
-                        String link = e.select("div.thumbnail a").attr("href");
+                        String logo_url = e.select("a img").attr("src");
+                        String name = e.select("a img").attr("alt");
+                        String link = BASE_URL+e.select("a").attr("href");
 
                         Channel channel = new Channel(name, logo_url, link);
                         channelArrayList.add(channel);
@@ -86,7 +90,11 @@ public class AllChannelsFragment extends Fragment {
                     }
 
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    error = "İnternet bağlantınızı kontrol edin!";
+                    return null;
+                }catch (Exception e){
+                    error = "Hata oluştu!";
+                    return null;
                 }
                 return null;
             }
@@ -97,6 +105,9 @@ public class AllChannelsFragment extends Fragment {
                 adapter = new AllChannelsAdapter(getContext(), channelArrayList);
                 recyclerView.setAdapter(adapter);
                 dialog.dismiss();
+
+                if (!String.valueOf(error).equals(String.valueOf("")))
+                    Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
             }
         };
 
